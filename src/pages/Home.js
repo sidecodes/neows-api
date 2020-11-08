@@ -33,22 +33,22 @@ function Home(){
             <div>
                 <form>
                 <div className="field actions">
-                <button className="ui primary button login" type="submit">
-                Signup
+                <button className="ui button" type="submit">
+                <Link to="/signup">Signup</Link>
                 </button>
                 or
                 <Link to="/login">Log In</Link>
             </div>
                 </form>
                 <h1 className="content">Asteroids List</h1>
-                    <table className="ui celled table">
+                    <table className="ui single line table">
                         <thead>
                             <tr>
-                                <th scope="col">Id</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Magnitude</th>
-                                <th scope="col">Diameter(miles)</th>
-                                <th scope="col">Hazardous</th>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Magnitude</th>
+                                <th>Diameter(miles)</th>
+                                <th>Hazardous</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -56,17 +56,20 @@ function Home(){
                                 asteroids.map(asteroid => {
                                     return(
                                     <tr>
-                                        <th scope="row">{asteroid.id}</th>
+                                        <th>{asteroid.id}</th>
                                         <td>{asteroid.name}</td>
                                         <td>{asteroid.absolute_magnitude_h}</td>
                                         <td>{asteroid.estimated_diameter.miles.estimated_diameter_max}</td>
-                                        <td>{asteroid.is_potentially_hazardous_asteroid ? <i className="positive"></i> : <i className="negative"></i>}</td>
+                                        <td>{asteroid.is_potentially_hazardous_asteroid}</td>
                                     </tr>
                                     )
                                 })
                             }
                         </tbody>
                     </table>
+                <div>
+                    <footer>Neo WS API</footer>
+                </div>
             </div>
     )
 }
