@@ -24,6 +24,7 @@ function App() {
               <PrivateRoute exact path="/profile/:id" component={Profile} />
               <ProfileRedirect exact path="/login" component={ Login } />
               <Route exact path="/" component={Home} />
+              <Route exact path="/home" component={Home} />
             </Switch>
           </div>
         </div>
